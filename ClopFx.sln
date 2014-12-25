@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClopFx", "ClopFx\ClopFx.csproj", "{50768D0F-668C-44F3-AFF7-302F933475EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClopFx.Demo", "ClopFx.Demo\ClopFx.Demo.csproj", "{17A778B8-25F4-4F1B-BD0F-C586EE1EB525}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50768D0F-668C-44F3-AFF7-302F933475EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50768D0F-668C-44F3-AFF7-302F933475EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50768D0F-668C-44F3-AFF7-302F933475EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50768D0F-668C-44F3-AFF7-302F933475EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17A778B8-25F4-4F1B-BD0F-C586EE1EB525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17A778B8-25F4-4F1B-BD0F-C586EE1EB525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17A778B8-25F4-4F1B-BD0F-C586EE1EB525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17A778B8-25F4-4F1B-BD0F-C586EE1EB525}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
