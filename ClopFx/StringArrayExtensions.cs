@@ -12,7 +12,7 @@ namespace ClopFx
                 throw new ArgumentNullException("args");
 
             if (!args.Any())
-                throw new Exception("No arguments have been passed.");
+                return new List<string[]>();
 
             if (!args.First().First().Equals(Globals.CommandSwitch))
                 throw new Exception("Command line arguments must start with a command switch.");

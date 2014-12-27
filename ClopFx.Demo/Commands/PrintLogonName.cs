@@ -28,10 +28,11 @@ namespace ClopFx.Demo.Commands
 
             Console.WriteLine(user);
         }
-        
+
         public OperationHelp GetOperationHelp()
         {
-            return new OperationHelp(this);
+            const string usageExample = @"/pln";
+            return new OperationHelp(this, usageExample);
         }
     }
 }
