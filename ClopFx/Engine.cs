@@ -48,8 +48,8 @@ namespace ClopFx
             var commandSets = args.ToCommandSets();
             foreach (var set in commandSets)
             {
-                //_commands.Single(c => c.CommandArgument.Equals(set[0])).Execute<>(set);
-                _commands[0].Execute(set);
+                _commands.Single(c => c.CommandArgument.Equals(set[0])).Execute(set);
+                //_commands[0].Execute(set);
             }
 
             return new ProcessResult();

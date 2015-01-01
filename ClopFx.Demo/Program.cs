@@ -1,4 +1,6 @@
-﻿using ClopFx.Demo.Commands;
+﻿using System;
+using System.Linq;
+using ClopFx.Demo.Commands;
 
 namespace ClopFx.Demo
 {
@@ -6,6 +8,12 @@ namespace ClopFx.Demo
     {
         public static void Main(string[] args)
         {
+            if (!args.Any())
+            {
+                Console.Write("Enter your command:");
+                args = Console.ReadLine().Split();
+            }
+
             Engine.CreateNew()
                 .WithCommand<PrintLogonName>()
                 .Process(args);
