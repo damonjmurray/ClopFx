@@ -8,15 +8,32 @@ namespace ClopFx.Demo
     {
         public static void Main(string[] args)
         {
-            if (!args.Any())
+            var engine = Engine.CreateNew()
+                .WithCommand<PrintLogonName>()
+                .OutputTo(Console.Out);
+
+            args = GetCommandLineArgument(args);
+            while (engine.Process(args) != ProcessResult.Completed)
             {
-                Console.Write("Enter your command:");
-                args = Console.ReadLine().Split();
+                engine.Process(args);
             }
 
-            Engine.CreateNew()
-                .WithCommand<PrintLogonName>()
-                .Process(args);
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
+        }
+
+        private static string[] GetCommandLineArgument(string[] args)
+        {
+            if (args != null && args.Any())
+                return args;
+            
+            string input;
+            do
+            {
+                Console.Write("Enter your command: ");
+            } while (string.IsNullOrEmpty(input = Console.ReadLine()));
+
+            return input.Split();
         }
     }
 }

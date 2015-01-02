@@ -1,7 +1,10 @@
 ﻿namespace ClopFx
 {
-    public class ProcessResult
+    public enum ProcessResult
     {
-
+        Unknown,
+        Aborted,
+        Failed,
+        Completed
     }
 }

@@ -6,6 +6,11 @@ namespace ClopFx
 {
     internal static class StringArrayExtensions
     {
+        public static bool IsNullOrEmpty(this string[] args)
+        {
+            return (args == null) || !args.Any();
+        }
+
         public static IEnumerable<string[]> ToCommandSets(this string[] args)
         {
             if (args == null)

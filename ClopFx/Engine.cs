@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using ClopFx.EngineGrammar;
 
@@ -9,7 +10,6 @@ namespace ClopFx
     {
         private readonly List<ICommandLineOperation> _commands;
 
-        // force entry through static method
         private Engine()
         {
             _commands = new List<ICommandLineOperation>();
@@ -40,19 +40,27 @@ namespace ClopFx
             return this;
         }
 
+        public IProcessable OutputTo(TextWriter outputTarget)
+        {
+            if (outputTarget == null)
+                throw new ArgumentNullException("outputTarget");
+
+            Console.SetOut(outputTarget);
+            return this;
+        }
+
         public ProcessResult Process(string[] args)
         {
             if (!_commands.Any())
-                return new ProcessResult();  // not erroneous - simple doesn't need to do anything
+                return new ProcessResult();  // not erroneous - simply doesn't need to do anything
 
             var commandSets = args.ToCommandSets();
             foreach (var set in commandSets)
             {
-                _commands.Single(c => c.CommandArgument.Equals(set[0])).Execute(set);
-                //_commands[0].Execute(set);
+                _commands.Single(c => (Globals.CommandSwitch + c.CommandArgument).Equals(set[0])).Execute(set);
             }
 
-            return new ProcessResult();
+            return ProcessResult.Completed;
         }
     }
 }
